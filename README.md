@@ -10,17 +10,17 @@ This project containerizes a simple Flask API and PostgreSQL database using Dock
    cd advance-containers
 
 2. **Create environment file**
-Copy-Item .env.example .env
 
-# edit .env and set your own POSTGRES_PASSWORD
+Copy-Item .env.example .env
+###edit .env and set your own POSTGRES_PASSWORD
 
 3. **Build and start containers**
+   
 docker compose up -d --build
 
 4. **Check services**
-docker compose ps
 
-# web should be Up (port 8000), db should be healthy
+docker compose ps ### web should be Up (port 8000), db should be healthy
 
 ## Test API
 Health:
@@ -38,22 +38,22 @@ Or run quick test:
 .\scripts\test-api.ps1
 
 ## Components
-Flask (Python) → exposes /user and /user/<id> endpoints.
++ Flask (Python) → exposes /user and /user/<id> endpoints.
 
-PostgreSQL (Docker) → stores user data, initialized via db/init.sql.
++ PostgreSQL (Docker) → stores user data, initialized via db/init.sql.
 
-Docker Compose → orchestrates both containers.
++ Docker Compose → orchestrates both containers.
 
-Volume → ensures DB persistence.
++ Volume → ensures DB persistence.
 
-Logs → stored in app/logs/app.log.
++ Logs → stored in app/logs/app.log.
 
 ## Security Highlights
-Non-root user in web container.
++ Non-root user in web container.
 
-Read-only filesystem & dropped privileges.
++ Read-only filesystem & dropped privileges.
 
-Secrets stored in .env (not in code).
++ Secrets stored in .env (not in code).
 
 ## Stop / Clean Up
 docker compose down -v
