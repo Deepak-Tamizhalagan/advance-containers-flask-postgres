@@ -1,0 +1,23 @@
+# Python junk
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual envs & tooling
+.venv/
+.env
+*.env
+
+# VCS & OS clutter
+.git/
+.gitignore
+.DS_Store
+Thumbs.db
+
+# Logs & temp
+app/logs/*.log
+*.tmp
+*.swp
+
+# Local scripts output
+payload.json
